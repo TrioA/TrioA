@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Profile Preview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      background: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .preview-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .img-wrap-dark {
+      padding: 20px;
+      background: #010409;
+      border-radius: 16px;
+      border: 1px solid #30363d;
+    }
+    .img-wrap-light {
+      padding: 20px;
+      background: #f6f8fa;
+      border-radius: 16px;
+      border: 1px solid #d0d7de;
+    }
+    img {
+      max-width: 985px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-card">
+    <div class="label" style="color: #58a6ff;">Generated Dark Mode (assets/dark_mode.svg)</div>
+    <div class="img-wrap-dark">
+      <img src="assets/dark_mode.svg" alt="Dark Mode Profile" />
+    </div>
+  </div>
+
+  <div class="preview-card">
+    <div class="label" style="color: #0969da;">Generated Light Mode (assets/light_mode.svg)</div>
+    <div class="img-wrap-light">
+      <img src="assets/light_mode.svg" alt="Light Mode Profile" />
+    </div>
+  </div>
+
+  <div class="preview-card">
+    <div class="label" style="color: #8b949e;">Reference Profile (docs/ref/Andrew6rant-profile.svg)</div>
+    <div class="img-wrap-dark">
+      <img src="docs/ref/Andrew6rant-profile.svg" alt="Reference Profile" />
+    </div>
+  </div>
+</body>
+</html>

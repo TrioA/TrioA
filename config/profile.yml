@@ -1,0 +1,63 @@
+# Central Profile Configuration
+# Basic structure and identity configuration.
+# Content (featured projects, skills, location, etc.) is dynamically fetched from data_source.
+
+identity:
+  username: "TrioA"
+  status_badge: "ONLINE"
+
+# Remote data source for dynamic projects, skills, and links
+data_source: "https://arav.is-a.dev/data.json"
+
+personal:
+  birthday: "2011-07-26"
+  location: "Gurugram, India"
+  operating_systems:
+    - "Windows"
+
+# Fallback technical defaults used when offline
+technical:
+  languages:
+    - "C++"
+    - "JavaScript"
+    - "Python"
+    - "C#"
+  markup_and_configs:
+    - "Vulkan"
+    - "React"
+    - "Vite"
+    - "CMake"
+    - "Docker"
+  interests:
+    - "Circuit Simulation"
+    - "Vulkan & 3D Graphics"
+    - "Robotics & Hardware"
+    - "Web Development"
+
+# Fallback projects showcase used when offline
+projects:
+  - name: "NODELAB"
+    description: "Browser-based interactive circuit simulator in Canvas 2D"
+    tech: ["JavaScript", "Canvas 2D", "ES Modules"]
+  - name: "MODERNMINECRAFT"
+    description: "High-performance Vulkan game engine & multiplayer client"
+    tech: ["C++", "Vulkan", "GLFW"]
+  - name: "ARAV GUPTA PORTFOLIO"
+    description: "Cinematic personal portfolio with dynamic visual identity"
+    tech: ["HTML", "CSS", "Vite"]
+
+hobbies:
+  - "Robotics"
+  - "3D Modeling"
+  - "Electronics"
+  - "Retro Computing"
+
+links:
+  website: "https://arav.is-a.dev"
+  email: "hello@arav.is-a.dev"
+
+custom_fields:
+  "Current Focus": "Circuit Simulation & Vulkan Graphics"
+  "Hardware Lab": "ESP32-CAM, Arduino, Robotics"
+  "Discipline": "Hardware & Software Engineering"
+  "Diagnostic": "ALL SYSTEMS NOMINAL"
