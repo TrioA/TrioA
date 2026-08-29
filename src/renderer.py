@@ -70,8 +70,8 @@ class ProfileRenderer:
             dashes = "—" * dash_count
             return f'<tspan x="{self.RIGHT_X}" y="{y}">- {self.escape(title)}</tspan> -{dashes}-—-'
         else:
-            # Header line: e.g. "arav@grant -———————————————————————————————————————————-—-"
-            host_header = f"{self.config.identity.username.lower()}@grant"
+            # Header line: e.g. "trioa@dev -———————————————————————————————————————————-—-"
+            host_header = f"{self.config.identity.username.lower()}@dev"
             dash_count = max(4, self.LINE_WIDTH - len(host_header) - 3)
             dashes = "—" * dash_count
             return f'<tspan x="{self.RIGHT_X}" y="{y}">{self.escape(host_header)}</tspan> -{dashes}-—-'
@@ -89,8 +89,8 @@ class ProfileRenderer:
         right_tspans.append(self._render_separator(None, 30))
 
         # System Specs
-        os_val = ", ".join(self.config.personal.operating_systems) or "Linux, Windows"
-        uptime_val = self.config.personal.uptime_display or "18 years, 2 months, 10 days"
+        os_val = ", ".join(self.config.personal.operating_systems) or "Windows"
+        uptime_val = self.config.personal.uptime_display or "N/A"
         location_val = self.config.personal.location or "Gurugram, India"
         focus_val = self.config.custom_fields.get("Current Focus", "Circuit Simulation, Vulkan Graphics")
         hardware_val = self.config.custom_fields.get("Hardware Lab", "ESP32-CAM, Arduino, Robotics")
@@ -107,7 +107,6 @@ class ProfileRenderer:
         # Technical Stack
         prog_langs = ", ".join(self.config.technical.languages[:4]) or "C++, JavaScript, Python, C#"
         sys_web = ", ".join(self.config.technical.markup_and_configs[:5]) or "Vulkan, React, Vite, CMake, Docker"
-        interests_val = ", ".join(self.config.technical.interests[:3]) or "Circuit Simulation, 3D Graphics"
 
         right_tspans.append(self._render_dot_line("Languages.Programming", prog_langs, 170))
         right_tspans.append(self._render_dot_line("Languages.Computer", sys_web, 190))
@@ -136,44 +135,44 @@ class ProfileRenderer:
         else:
             right_tspans.append(self._render_dot_line("Project.Portfolio", "Hardware & Software Showcase", 290))
 
-        # Section: Contact (y=310 / 330)
+        # Section: Contact (y=330)
         right_tspans.append(self._render_separator("Contact", 330))
 
         email_val = self.config.links.email or "hello@arav.is-a.dev"
         web_val = self.config.links.website or "https://arav.is-a.dev"
         gh_val = self.config.identity.username or "TrioA"
-        insta_val = "@arav.g267"
 
         right_tspans.append(self._render_dot_line("Email.Personal", email_val, 350))
         right_tspans.append(self._render_dot_line("Website", web_val, 370))
         right_tspans.append(self._render_dot_line("GitHub", gh_val, 390))
-        right_tspans.append(self._render_dot_line("Instagram", insta_val, 410))
 
-        # Empty row (y=430)
+        # Empty rows (y=410, y=430)
+        right_tspans.append(f'<tspan x="{self.RIGHT_X}" y="410" class="cc">. </tspan>')
         right_tspans.append(f'<tspan x="{self.RIGHT_X}" y="430" class="cc">. </tspan>')
 
         # Section: GitHub Stats (y=450)
         right_tspans.append(self._render_separator("GitHub Stats", 450))
 
         # Row: Repos & Stars (y=470)
-        repos_cnt = self.stats.repositories or 12
-        contrib_cnt = self.stats.contributions or 133
-        stars_cnt = self.stats.stars or 0
+        repos_cnt = self.stats.repositories
+        contrib_cnt = self.stats.contributions
+        stars_cnt = self.stats.stars
         repo_dots = "." * max(2, 6 - len(str(repos_cnt)))
         star_dots = "." * max(2, 12 - len(str(stars_cnt)))
         
+        contrib_str = f" {{<tspan class=\"key\">Contributed</tspan>: <tspan class=\"value\" id=\"contrib_data\">{contrib_cnt}</tspan>}}" if contrib_cnt > 0 else ""
+
         right_tspans.append(
             f'<tspan x="{self.RIGHT_X}" y="470" class="cc">. </tspan>'
             f'<tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> {repo_dots} </tspan>'
-            f'<tspan class="value" id="repo_data">{repos_cnt}</tspan> '
-            f'{{<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">{contrib_cnt}</tspan>}} | '
+            f'<tspan class="value" id="repo_data">{repos_cnt}</tspan>{contrib_str} | '
             f'<tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> {star_dots} </tspan>'
             f'<tspan class="value" id="star_data">{stars_cnt}</tspan>'
         )
 
         # Row: Commits & Followers (y=490)
-        commits_cnt = self.stats.commits or 240
-        followers_cnt = self.stats.followers or 4
+        commits_cnt = self.stats.commits
+        followers_cnt = self.stats.followers
         commit_dots = "." * max(2, 17 - len(f"{commits_cnt:,}"))
         follower_dots = "." * max(2, 8 - len(str(followers_cnt)))
 
@@ -186,9 +185,9 @@ class ProfileRenderer:
         )
 
         # Row: Lines of code (y=510)
-        additions = self.stats.lines_added or 523178
-        deletions = self.stats.lines_deleted or 76902
-        net_loc = self.stats.net_lines or (additions - deletions)
+        additions = self.stats.lines_added
+        deletions = self.stats.lines_deleted
+        net_loc = self.stats.net_lines
         
         right_tspans.append(
             f'<tspan x="{self.RIGHT_X}" y="510" class="cc">. </tspan>'
