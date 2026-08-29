@@ -22,6 +22,12 @@ class TestConfig(unittest.TestCase):
         uptime = p.calculate_uptime(reference_date=ref)
         self.assertIn("25 years", uptime)
 
+    def test_calculate_uptime_singular(self):
+        p = PersonalConfig(birthday="2024-01-01")
+        ref = date(2025, 2, 2)
+        uptime = p.calculate_uptime(reference_date=ref)
+        self.assertEqual(uptime, "1 year, 1 month, 1 day")
+
     def test_calculate_uptime_custom_string(self):
         p = PersonalConfig(birthday="18 years, 5 months")
         uptime = p.calculate_uptime()

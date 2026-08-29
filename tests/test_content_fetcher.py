@@ -65,6 +65,7 @@ class TestContentFetcher(unittest.TestCase):
     def test_content_fetcher_fallback_on_network_failure(self):
         base_config = ProfileConfig.load_from_file("config/profile.yml")
         fetcher = ContentFetcher()
+        fetcher.fetch_raw_data = MagicMock(return_value=None)
 
         fallback_config = fetcher.merge_with_config(base_config, raw_data=None)
 

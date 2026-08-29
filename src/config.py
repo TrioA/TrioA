@@ -52,7 +52,11 @@ class PersonalConfig:
                 years -= 1
                 months += 12
 
-            return f"{years} years, {months} months, {days} days"
+            year_str = f"{years} year" if years == 1 else f"{years} years"
+            month_str = f"{months} month" if months == 1 else f"{months} months"
+            day_str = f"{days} day" if days == 1 else f"{days} days"
+
+            return f"{year_str}, {month_str}, {day_str}"
         except Exception:
             return str(self.birthday).strip()
 
