@@ -14,6 +14,7 @@ personal:
   location: "Gurugram, India"
   operating_systems:
     - "Windows"
+    - "Android"
 
 # Fallback technical defaults used when offline
 technical:
@@ -22,42 +23,67 @@ technical:
     - "JavaScript"
     - "Python"
     - "C#"
-  markup_and_configs:
-    - "Vulkan"
+    - "HTML"
+    - "CSS"
+  frameworks_and_tools:
     - "React"
     - "Vite"
+    - "Three.js"
+    - "Unity"
+    - "Godot"
+    - "Blender"
     - "CMake"
-    - "Docker"
+    - "Git"
+  graphics_and_systems:
+    - "Vulkan"
+    - "Canvas 2D"
+    - "GLFW"
+    - "GLM"
   interests:
     - "Circuit Simulation"
     - "Vulkan & 3D Graphics"
     - "Robotics & Hardware"
     - "Web Development"
+    - "Game Development"
+    - "Creative Coding"
 
 # Fallback projects showcase used when offline
 projects:
   - name: "NODELAB"
-    description: "Browser-based interactive circuit simulator in Canvas 2D"
+    description: "Completely browser-based interactive circuit simulator"
     tech: ["JavaScript", "Canvas 2D", "ES Modules"]
+
   - name: "MODERNMINECRAFT"
-    description: "High-performance Vulkan game engine & multiplayer client"
-    tech: ["C++", "Vulkan", "GLFW"]
-  - name: "ARAV GUPTA PORTFOLIO"
-    description: "Cinematic personal portfolio with dynamic visual identity"
-    tech: ["HTML", "CSS", "Vite"]
+    description: "High-performance C++ Vulkan Minecraft engine & multiplayer client"
+    tech: ["C++", "Vulkan", "GLFW", "GLM", "EnTT", "CMake"]
+
+  - name: "ELVORACART"
+    description: "Modern full-stack e-commerce platform"
+    tech: ["React", "Vite", "JavaScript", "Vercel"]
+
+  - name: "MY DEVELOPER PORTFOLIO"
+    description: "Cinematic personal portfolio with a hardware-inspired visual identity"
+    tech: ["HTML", "CSS", "JavaScript", "Vite"]
+
+  - name: "MY FLUTE PORTFOLIO"
+    description: "Showcasing my music journey"
+    tech: ["HTML", "CSS", "JavaScript", "Vite"]
 
 hobbies:
   - "Robotics"
-  - "3D Modeling"
   - "Electronics"
-  - "Retro Computing"
+  - "3D Modeling"
+  - "Game Development"
+  - "Creative Coding"
 
 links:
   website: "https://arav.is-a.dev"
   email: "hello@arav.is-a.dev"
+  github: "https://github.com/TrioA"
 
 custom_fields:
-  "Current Focus": "Circuit Simulation & Vulkan Graphics"
-  "Hardware Lab": "ESP32-CAM, Arduino, Robotics"
-  "Discipline": "Hardware & Software Engineering"
+  "Current Focus": "UI/UX Design"
+  "Hardware Lab": "ESP32-CAM • Arduino • Sensors • Robotics"
+  "Discipline": "Hardware + Software Engineering"
+  "Stack": "C++ • JavaScript • Python"
   "Diagnostic": "ALL SYSTEMS NOMINAL"

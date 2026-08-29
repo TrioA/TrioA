@@ -5,3 +5,7 @@
     <img alt="Developer Profile" src="assets/dark_mode.svg" width="880">
   </picture>
 </div>
+
+---
+
+> Building things, breaking things, and occasionally figuring out why they broke.
