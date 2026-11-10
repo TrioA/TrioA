@@ -110,7 +110,7 @@ class ProfileRenderer:
 
         right_tspans.append(self._render_dot_line("Languages.Programming", prog_langs, 170))
         right_tspans.append(self._render_dot_line("Languages.Computer", sys_web, 190))
-        right_tspans.append(self._render_dot_line("Languages.Real", "English, Hindi", 210))
+        right_tspans.append(self._render_dot_line("Languages.Real", "English, Hindi, German.A2", 210))
 
         # Empty row (y=230)
         right_tspans.append(f'<tspan x="{self.RIGHT_X}" y="230" class="cc">. </tspan>')
